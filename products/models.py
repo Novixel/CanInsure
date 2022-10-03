@@ -18,6 +18,7 @@ class Product(models.Model):
     included_services = models.ManyToManyField(Service, help_text='Select the services for this product')
 
     def save(self, *args, **kwargs):
+        super(Product, self).save(*args, **kwargs)
         self.set_product_id()
         super(Product, self).save(*args, **kwargs)
 
