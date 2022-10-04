@@ -1,1 +1,1 @@
-web: python website/manage.py runserver
+web: gunicorn caninsure.wsgi
