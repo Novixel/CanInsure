@@ -1,0 +1,24 @@
+{% extends "main/header.html" %}
+
+{% block content %} 
+    {% if user.is_authenticated %}
+
+    <h1>
+        Available Products
+    </h1>
+        {% for product in product_list %}
+            <strong> {{ product }} </strong>
+            <ul>
+                <li>{{ product.included_services.name }}</li>
+                <li>{{ product.included_services.service_price }}</li>
+            </ul> 
+
+        {% endfor %}   
+    {% else %}
+
+    <h1>
+        You are not logged in
+    </h1>
+
+    {% endif %}
+{% endblock %}
